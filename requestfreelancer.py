@@ -14,7 +14,7 @@ contfreelas = 0
 while(current_page <= final_page):
     data = requests.get("https://freelancer.com/jobs/"  + str(current_page) + "/")
     soup_data = bs(data.text, "html.parser")
-    #coletando nome, tags
+    #coletando dados específicos
     names = soup_data.find_all(class_="JobSearchCard-primary-heading-link")
     tags = soup_data.find_all(class_="JobSearchCard-primary-tags")
     bid = soup_data.find_all(class_="JobSearchCard-secondary-price")
