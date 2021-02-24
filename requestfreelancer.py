@@ -32,10 +32,11 @@ while(current_page <= final_page):
         #bid
         if "Private project" in treatedname:
             bid.insert(cont, "")
-        treatedbid = bid[cont].text.replace(" ", "")
-        treatedbid = treatedbid.replace("\n", "")
-        treatedbid = treatedbid.replace("AvgBid", "")
-        Jobs["bid"] = treatedbid
+        if bid[cont]!= "":
+            treatedbid = bid[cont].text.replace(" ", "")
+            treatedbid = treatedbid.replace("\n", "")
+            treatedbid = treatedbid.replace("AvgBid", "")
+            Jobs["bid"] = treatedbid
         #site
         Jobs["site"] = "Freelancer"
         cont = cont + 1
